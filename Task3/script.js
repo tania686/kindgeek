@@ -23,6 +23,8 @@ function get(key) {
 
 // ADDING EVENTS FOR BUTTONS
 
+const DATA = ["name11", "name2", "name3", "name4", "name5", "name6"];
+
 var btn1 = document.getElementById("first-btn");
 var btn2 = document.getElementById("second-btn");
 
@@ -36,7 +38,7 @@ btn2.addEventListener("click", function() {
 
 //DISPLAY DATA AS A LIST ON HTML PAGE
 
-const data = ["name11", "name2", "name3", "name4", "name5", "name6"];
+const names = ["name11", "name2", "name3", "name4", "name5", "name6"];
 const numbers = ["12354", "7393", "537", "4278", "2763", "42753"];
 
 function showArray(input) {
@@ -65,10 +67,10 @@ function showObject(input) {
   document.body.appendChild(list);
 }
 
-showArray(data);
+showArray(names);
 showArray(numbers);
 
-//TOGLE CLASS ON THE <li> ELEMENTS
+//TOGLE CLASS "crossed" ON THE <li> ELEMENTS
 
 var list_items = document.getElementsByTagName("li");
 
