@@ -34,6 +34,40 @@ btn2.addEventListener("click", function() {
   console.log(get("test"));
 });
 
+//DISPLAY DATA AS A LIST ON HTML PAGE
+
+const data = ["name11", "name2", "name3", "name4", "name5", "name6"];
+const numbers = ["12354", "7393", "537", "4278", "2763", "42753"];
+
+function showArray(input) {
+  var list = document.createElement("ul");
+  list.id = "holder";
+  input.forEach(function(item) {
+    var li = document.createElement("li");
+    var text = document.createTextNode(item);
+    li.appendChild(text);
+    list.appendChild(li);
+  });
+  document.body.appendChild(list);
+}
+
+function showObject(input) {
+  var list = document.createElement("ul");
+  list.id = "holder";
+  input
+    .map(a => a.deviceId)
+    .forEach(function(item) {
+      var li = document.createElement("li");
+      var text = document.createTextNode(item);
+      li.appendChild(text);
+      list.appendChild(li);
+    });
+  document.body.appendChild(list);
+}
+
+showArray(data);
+showArray(numbers);
+
 
 
 
