@@ -68,6 +68,19 @@ function showObject(input) {
 showArray(data);
 showArray(numbers);
 
+//TOGLE CLASS ON THE <li> ELEMENTS
+
+var list_items = document.getElementsByTagName("li");
+
+for (var i = 0; i < list_items.length; i++) {
+  var item = list_items[i];
+  item.addEventListener("click", function(e) {
+    if (e.target && e.target.matches("li")) {
+      e.target.classList.toggle("crossed");
+      console.log("clicked " + e.target.innerText);
+    }
+  });
+}
 
 
 
