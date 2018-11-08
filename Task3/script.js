@@ -21,6 +21,18 @@ function get(key) {
   return value;
 }
 
+// ADDING EVENTS FOR BUTTONS
+
+var btn1 = document.getElementById("first-btn");
+var btn2 = document.getElementById("second-btn");
+
+btn1.addEventListener("click", function() {
+  return add("test", DATA);
+});
+
+btn2.addEventListener("click", function() {
+  console.log(get("test"));
+});
 
 
 
