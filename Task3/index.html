@@ -17,7 +17,6 @@
   </head>
 
   <body>
-  
     <div id="btn-holder">
       <button type="button" id="first-btn" class="btn btn-primary ">
         Store Data
@@ -28,11 +27,28 @@
     </div>
 
     <div class="input-group mb-3" id="input-holder">
-      <input type="text" id="input-data" class="form-control" placeholder="Put your data here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <input
+        type="text"
+        id="input-data"
+        class="form-control"
+        placeholder="Put your data here"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
       <div class="input-group-append">
-        <button id="btn-addLS" class="btn btn-outline-secondary" type="button" onclick="event.stopPropagation()">Save to Local Storage</button>
+        <button
+          id="btn-addLS"
+          class="btn btn-outline-secondary"
+          type="button"
+          onclick="event.stopPropagation()"
+        >
+          Save to Local Storage
+        </button>
       </div>
     </div>
+
+    <h2>Stored data</h2>
+    <div id="list-holder"></div>
 
     <script src="script.js"></script>
     <script

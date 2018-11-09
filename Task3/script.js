@@ -44,11 +44,10 @@ const add_btn = document.getElementById("btn-addLS");
 const data = document.getElementById("input-data");
 
 
-console.log(data.value);
-
 add_btn.addEventListener("click", function () {
   var value = data.value;
   add("inputValue", value);  
+  location.reload();
 });
 
 //DISPLAY DATA AS A LIST ON HTML PAGE
