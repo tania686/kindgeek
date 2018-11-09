@@ -21,9 +21,13 @@ function get(key) {
   return value;
 }
 
+
+
+
+
 // ADDING EVENTS FOR BUTTONS
 
-const DATA = ["name11", "name2", "name3", "name4", "name5", "name6"];
+//const DATA = ["name11", "name2", "name3", "name4", "name5", "name6"];
 
 var btn1 = document.getElementById("first-btn");
 var btn2 = document.getElementById("second-btn");
@@ -34,6 +38,17 @@ btn1.addEventListener("click", function() {
 
 btn2.addEventListener("click", function() {
   console.log(get("test"));
+});
+
+const add_btn = document.getElementById("btn-addLS");
+const data = document.getElementById("input-data");
+
+
+console.log(data.value);
+
+add_btn.addEventListener("click", function () {
+  var value = data.value;
+  add("inputValue", value);  
 });
 
 //DISPLAY DATA AS A LIST ON HTML PAGE
@@ -67,8 +82,7 @@ function showObject(input) {
   document.body.appendChild(list);
 }
 
-showArray(names);
-showArray(numbers);
+
 
 //TOGLE CLASS "crossed" ON THE <li> ELEMENTS
 
@@ -86,6 +100,8 @@ function li_crossed () {
 }
 
 li_crossed();
+
+
 
 
 
