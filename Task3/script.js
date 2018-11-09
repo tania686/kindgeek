@@ -30,19 +30,17 @@ function get(key) {
 //const DATA = ["name11", "name2", "name3", "name4", "name5", "name6"];
 
 var btn1 = document.getElementById("first-btn");
-var btn2 = document.getElementById("second-btn");
+
 
 btn1.addEventListener("click", function() {
   return add("test", DATA);
 });
 
-btn2.addEventListener("click", function() {
-  console.log(get("test"));
-});
 
+//add to LS button
 const add_btn = document.getElementById("btn-addLS");
-const data = document.getElementById("input-data");
 
+const data = document.getElementById("input-data");
 
 add_btn.addEventListener("click", function () {
   var value = data.value;
@@ -50,14 +48,51 @@ add_btn.addEventListener("click", function () {
   location.reload();
 });
 
+//show from LS button
+
+var show_btn = document.getElementById("second-btn");
+
+function get(key) {
+  var value = localStorage.getItem(key);
+  if (!value) {
+    return;
+  }
+  if (value[0] === "{") {
+    value = JSON.parse(value);
+  }
+  return value;
+}
+
+function showArray(input) {
+  var list = document.createElement("ul");
+  list.id = "list-holder";
+  input.forEach(function(item) {
+    var li = document.createElement("li");
+    var text = document.createTextNode(item);
+    li.appendChild(text);
+    list.appendChild(li);
+  });
+  document.body.appendChild(list);
+}
+
+show_btn.addEventListener("click", function() {
+  const value = get("inputValue");
+  console.log(value);
+  var list = document.getElementById("list-holder");
+  var li = document.createElement("li");
+  var text = document.createTextNode(value);
+  li.appendChild(text);
+  list.appendChild(li);
+});
+
 //DISPLAY DATA AS A LIST ON HTML PAGE
 
-const names = ["name11", "name2", "name3", "name4", "name5", "name6"];
+const names = ["name1", "name2", "name3", "name4", "name5", "name6"];
 const numbers = ["12354", "7393", "537", "4278", "2763", "42753"];
 
 function showArray(input) {
   var list = document.createElement("ul");
-  list.id = "holder";
+  list.id = "list-holder";
   input.forEach(function(item) {
     var li = document.createElement("li");
     var text = document.createTextNode(item);
@@ -81,6 +116,11 @@ function showObject(input) {
   document.body.appendChild(list);
 }
 
+showArray(names);
+
+//add an input value to the list
+
+
 
 
 //TOGLE CLASS "crossed" ON THE <li> ELEMENTS
@@ -99,6 +139,8 @@ function li_crossed () {
 }
 
 li_crossed();
+
+
 
 
 
