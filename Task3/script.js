@@ -72,17 +72,22 @@ showArray(numbers);
 
 //TOGLE CLASS "crossed" ON THE <li> ELEMENTS
 
-var list_items = document.getElementsByTagName("li");
+function li_crossed () {
+  var list_items = document.getElementsByTagName("li");
 
-for (var i = 0; i < list_items.length; i++) {
-  var item = list_items[i];
-  item.addEventListener("click", function(e) {
-    if (e.target && e.target.matches("li")) {
-      e.target.classList.toggle("crossed");
-      console.log("clicked " + e.target.innerText);
-    }
-  });
+  for (var i = 0; i < list_items.length; i++) {
+    var item = list_items[i];
+    item.addEventListener("click", function(e) {
+      if (e.target && e.target.matches("li")) {
+        e.target.classList.toggle("crossed");
+        }
+    });
+  }
 }
+
+li_crossed();
+
+
 
 
 
